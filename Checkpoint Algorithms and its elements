@@ -1,0 +1,46 @@
+ALGORITHM aanalyze_sentence
+VAR
+    sentence : STRING ;
+    character : CHAR ;
+    length_of_sentence, number_of_words, number_of_vowels, i : INTEGER;
+    vowels : STRING;
+    is_space :BOOLEAN
+BEGIN
+ length_of_sentence = 0 ;
+ number_of_words = 0 ;
+ number_of_vowels = 0 ; 
+ vowels = "aeiouAEIOUY" ;
+
+ write("enter your sentence ending with period:");
+ read(sentence);
+
+ for i from 0 to length(sentence) - 1 DO 
+ character=sentence[i] ;
+
+ length_of_sentence = length_of_sentence +1 ;
+ IF (character = " ") THEN
+   if (i>0 and sentence [i-1] != "") THEN
+             number_of_words = number_of_words + 1;
+           END_IF
+       END_IF
+   END_FOR
+   IF (length_of_sentence > 0) THEN
+       number_of_words = number_of_words + 1;
+   END_IF
+
+   
+   write("Length of the sentence: ", length_of_sentence);
+   write("Number of words: ", number_of_words);
+   write("Number of vowels: ", number_of_vowels);
+
+END
+
+
+
+
+
+
+
+
+
+END
